@@ -11,15 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-
-            $table->integer('quantity');
-            $table->decimal('total', 8, 2);
-            $table->dateTime('delivered_at')->nullable();
-            $table->foreign('user_id')->constrained()->cascadeOnDelete();
-            $table->foreign('coupon_id')->constrained()->cascadeOnDelete();
-
             $table->timestamps();
         });
     }
@@ -29,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('reviews');
     }
 };

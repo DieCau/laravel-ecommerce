@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->integer('quantity');
             $table->decimal('total', 8, 2);
-            $table->dateTime('delivery_at')->nullable();
+            $table->dateTime('delivered_at')->nullable();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->foreignId('coupon_id')->nullable()->constrained()->cascadeOnDelete();
 
